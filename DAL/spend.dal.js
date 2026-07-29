@@ -7,3 +7,5 @@ async function getAmountById(budgetID) {
 async function getspendById(budgetID) {
     return client.from("spends").select().eq(budgetId, budgetID)
 }
+
+export default {getAmountById, getspendById}

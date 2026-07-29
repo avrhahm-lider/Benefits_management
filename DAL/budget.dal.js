@@ -11,3 +11,5 @@ async function getbudgetsByquery(query) {
 async function getbudgets() {
     return client.from("budgets").select()
 }
+
+export default {createbudget, getbudgetsByquery,getbudgets}

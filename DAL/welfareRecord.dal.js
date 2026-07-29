@@ -14,3 +14,5 @@ async function createSoldier(soldier){
 async function updatehistory(benefitperiod) {
     return welfareRecord.updateOne({_id: new ObjectId(id)}, {$set :benefitperiod})
 }
+
+export default {getSoldier, createSoldier,updatehistory}
