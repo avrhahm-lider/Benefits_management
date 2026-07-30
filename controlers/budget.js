@@ -14,7 +14,7 @@ async function create(req, res) {
 
 async function getbudght(req, res) {
     try{
-        const result = await budghtSer.getBudget(req.params)
+        const result = await budghtSer.getBudget(req.query)
         res.status(200).json(result)
     }catch (err){
         const status = err.status || 500

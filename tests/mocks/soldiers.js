@@ -24,3 +24,17 @@ FAKE_UPDATE_BODY ={
     budgetApproved: false,
     decisionDate : z.string()
 }
+
+const welfareRecord = db.collection("welfareRecord")
+async function getSoldier(id) {
+    return welfareRecord.findOne({soldierId: id})
+}
+
+async function createSoldier(soldier){
+    const res = await welfareRecord.insertOne(soldier)
+    return {_id: res.insertedId, ...soldier}
+}
+
+async function updatehistory(id, benefitperiod) {
+    return welfareRecord.findOneAndUpdate({soldierId: id}, {$set :benefitperiod})
+}

@@ -1,4 +1,5 @@
 import { Soldier, bebefit } from '../modules/modules.js'
+import { bodyEror } from './bodyError.js'
 
 
 export function soldierMidell(req, res, next) {
@@ -6,7 +7,7 @@ export function soldierMidell(req, res, next) {
     if (safe.success)
         next()
     else 
-        next("invalid body")
+        next(bodyEror())
 }
 
 export function benfitMidell(req, res, next) {
@@ -14,6 +15,6 @@ export function benfitMidell(req, res, next) {
     if (safe.success)
         next()
     else 
-        next("invalid body")
+        next(bodyEror())
 }
 

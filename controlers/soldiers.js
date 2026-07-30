@@ -2,7 +2,8 @@ import soldeirsSer from '../services/soldiers.service.js'
 
 async function create(req, res) {
     try{
-        const result = await soldeirsSer.createSoldier(req.params, req.body)
+        const {soldierId} = req.params
+        const result = await soldeirsSer.createSoldier(soldierId, req.body)
         res.status(201).json(result)
     }catch (err){
         const status = err.status || 500
@@ -14,7 +15,8 @@ async function create(req, res) {
 
 async function getsoldier(req, res) {
     try{
-        const result = await soldeirsSer.getSoldier(req.params)
+        const {soldierId} = req.params
+        const result = await soldeirsSer.getSoldier(soldierId)
         res.status(200).json(result)
     }catch (err){
         const status = err.status || 500
@@ -26,7 +28,8 @@ async function getsoldier(req, res) {
 
 async function update(req, res) {
     try{
-        const result = await soldeirsSer.updtebenefits(req.params, req.body)
+        const {soldierId} = req.params
+        const result = await soldeirsSer.updtebenefits(soldierId, req.body)
         res.status(200).json(result)
     }catch (err){
         const status = err.status || 500

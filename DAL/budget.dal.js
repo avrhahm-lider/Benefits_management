@@ -1,7 +1,8 @@
 import client from '../db/supaBaseConnection.js'
 
 async function createbudget(budget) {
-    return await client.from("budgets").insert(budget).select().single
+    console.log(budget)
+    return await client.from("budgets").insert(budget).select().single()
 }
 
 async function getbudgetsByquery(query) {
@@ -12,7 +13,7 @@ async function getbudgets() {
     return client.from("budgets").select()
 }
 async function getbudgetsById(id) {
-    return client.from("budgets").select().eq("id",id)
+    return client.from("budgets").select().eq("id",id).single()
 }
 export default {createbudget, getbudgetsByquery,getbudgets, getbudgetsById}
 

@@ -37,6 +37,6 @@ export const Budget = z.object({
 })
 export const Spend = z.object({
     amount: z.int().gte(0),
-    reson: z.string()
+    reson: z.string().default("")
 })
     
