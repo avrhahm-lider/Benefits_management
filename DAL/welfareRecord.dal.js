@@ -3,7 +3,7 @@ import db  from "../db/mongoDbConnection.js";
 
 const welfareRecord = db.collection("welfareRecord")
 async function getSoldier(id) {
-    return welfareRecord.findOne({_id: ObjectId.id})
+    return welfareRecord.findOne({soldierId: id})
 }
 
 async function createSoldier(soldier){
@@ -12,7 +12,9 @@ async function createSoldier(soldier){
 }
 
 async function updatehistory(id, benefitperiod) {
-    return welfareRecord.findOneAndUpdate({_id: new ObjectId(id)}, {$set :benefitperiod})
+    return welfareRecord.findOneAndUpdate({soldierId: id}, {$set :benefitperiod})
 }
 
 export default {getSoldier, createSoldier,updatehistory, ObjectId}
+
+

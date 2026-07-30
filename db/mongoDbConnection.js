@@ -14,5 +14,5 @@ try {
     process.exit()
 }
 
-const db = client.db("roboticsLab")
+const db = client.db("welfare")
 export default db

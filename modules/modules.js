@@ -15,15 +15,28 @@ export const diningHall = z.object({
 export const Soldier = z.object({
     unit : z.string(),
     benefitType: z.enum(["giftCard", "diningHall"]),
-    details: z.enum([GiftCard, diningHall]),
+    details: z.union([GiftCard, diningHall]),
     decisionReason : z.string(),
-    budgetApproved: z.boolean()
+    budgetApproved: z.boolean(),
+    startDate : z.string().default("")
 })
 
 export const bebefit = z.object({
     benefitType: z.enum(["giftCard", "diningHall"]),
-    details: z.enum([GiftCard, diningHall]),
+    details: z.union([GiftCard, diningHall]),
     decisionReason : z.string(),
     budgetApproved: z.boolean(),
-    decisionDate : z.string()
+    decisionDate : z.string().default("")
 })
+
+export const Budget = z.object({
+    unit : z.string(),
+    benefitType: z.enum(["giftCard", "diningHall"]),
+    month: z.string(),
+    allocatedAmount : z.int().gte(0)
+})
+export const Spend = z.object({
+    amount: z.int().gte(0),
+    reson: z.string()
+})
+    
