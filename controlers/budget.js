@@ -14,7 +14,7 @@ async function create(req, res) {
 
 async function getbudght(req, res) {
     try{
-        const result = await budghtSer.getBudget(req.parms)
+        const result = await budghtSer.getBudget(req.params)
         res.status(200).json(result)
     }catch (err){
         const status = err.status || 500
@@ -26,8 +26,8 @@ async function getbudght(req, res) {
 
 async function getTranseac(req, res) {
     try{
-        const {id} = req.parms
-        const result = await budghtSer.updtebenefits(id)
+        const {id} = req.params
+        const result = await budghtSer.getTranseac(id)
         res.status(200).json(result)
     }catch (err){
         const status = err.status || 500
@@ -39,7 +39,7 @@ async function getTranseac(req, res) {
 
 async function createTranseac(req, res) {
     try{
-        const {id} = req.parms
+        const {id} = req.params
         const result = await budghtSer.updtebenefits(id, req.body)
         res.status(200).json(result)
     }catch (err){
