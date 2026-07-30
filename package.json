@@ -2,9 +2,10 @@
   "name": "benefits_management",
   "version": "1.0.0",
   "description": "\"# Benefits_management\"",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --watch app",
+    "test": "node --test app"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^2.111.0",
     "dotenv": "^17.4.2",
