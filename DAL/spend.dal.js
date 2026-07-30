@@ -1,6 +1,8 @@
 import client from '../db/supaBaseConnection.js'
 
 async function createSpend(spend) {
+    console.log(spend);
+    
     return client.from("spends").insert(spend).select().single()
 }
 

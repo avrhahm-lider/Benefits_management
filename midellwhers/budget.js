@@ -1,11 +1,13 @@
 import { Budget, Spend } from '../modules/modules.js'
+import { bodyEror } from './bodyError.js'
+
 
 export function budgetMidell(req, res, next) {
         const safe = Budget.safeParse(req.body)
     if (safe.success)
         next()
     else 
-        next("invalid body")
+        next(bodyEror())
 }
 
 export function spendMidell(req, res, next) {
@@ -13,5 +15,5 @@ export function spendMidell(req, res, next) {
     if (safe.success)
         next()
     else 
-        next("invalid body")
+        next(bodyEror())
 }
